@@ -230,6 +230,34 @@ A traditional Chinese temple shrine showing Chi Fu Wang Ye (池府王爺) deity 
 Style: Traditional Chinese religious art, temple interior, dignified and powerful deity, dark wood and traditional decorations.
 ```
 
+### 遊戲背景圖片 (`background.jpg`)
+```
+A panoramic view of ancient Tainan city at dusk, showing traditional Taiwanese temples and historic architecture in silhouette. Include multiple temple rooftops with curved tiles, traditional lanterns glowing softly, and a mystical atmosphere with stars beginning to appear in the twilight sky. The image should be suitable as a website background - not too busy or distracting, with darker tones that won't interfere with text readability. Atmospheric and cinematic style with warm golden and deep blue tones. 1920x1080 pixels, landscape orientation.
+
+Style: Cinematic landscape, traditional Taiwanese architecture, dusk lighting, mystical atmosphere, suitable for website background use.
+```
+
+### 第一回開場示意圖 (`chapter1_intro.png`)
+```
+Thunder God (雷震子) riding a T-Bike near Wanfuan Temple in Tainan, suddenly being attacked by Monkey King (孫悟空) with his golden staff. Thunder God has blue-green skin, bird-like features, and wings on his back, looking surprised and defensive. Monkey King appears fierce and aggressive, emerging from a temple alley with his golden staff raised. Traditional Taiwanese temple architecture in the background with warm lighting. Dynamic action scene showing the moment of confrontation. 600x400 pixels, landscape orientation.
+
+Style: Chinese mythology characters, dynamic action scene, traditional temple setting, dramatic lighting, cinematic composition.
+```
+
+### 第二回開場示意圖 (`chapter2_intro.png`)
+```
+Thunder God (雷震子) and Monkey King (孫悟空) standing together in front of the majestic Datianhou Temple, looking up at the two guardian deities - Thousand-Mile Eyes (千里眼) and Wind-Following Ears (順風耳). The guardian deities should be imposing figures with distinctive large eyes and ears respectively, positioned on either side of Mazu statue. The temple interior should be grand and ornate with red pillars, golden decorations, and traditional Chinese architectural details. Peaceful but tense atmosphere as they seek answers. 600x400 pixels, landscape orientation.
+
+Style: Chinese temple interior, mythological characters meeting, grand architecture, red and gold color scheme, atmospheric lighting.
+```
+
+### 第三回開場示意圖 (`chapter3_intro.png`)
+```
+Thunder God (雷震子) and Monkey King (孫悟空) approaching Pujidian Temple at night, with a mysterious spider demon (蜘蛛精) lurking in the shadows. The spider demon should have a humanoid form with spider-like features, multiple eyes, and dark robes, partially hidden but menacing. The temple should look ancient and slightly eerie under moonlight with traditional lanterns casting long shadows. Tense atmosphere building up to the final confrontation. Stone lions and traditional architecture visible. 600x400 pixels, landscape orientation.
+
+Style: Nighttime scene, mysterious and suspenseful atmosphere, traditional temple architecture, mythological creatures, dramatic shadows and lighting.
+```
+
 ## 📄 授權
 
 本專案採用 MIT 授權條款。
