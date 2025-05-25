@@ -95,6 +95,11 @@ thunder-god-adventure/
 - **模組化 CSS**：使用 CSS 變數和類別系統
 - **文檔整合**：移除重複的 AI_NOTE.md，統一使用 README
 
+#### 圖片框架建立
+- **圖片顯示系統**：章節圖片 500x300px，謎題圖片 400x250px
+- **佔位設計**：金色邊框，漸層背景，完美置中
+- **響應式圖片**：手機自動調整尺寸，保持比例
+
 #### 需求調整
 - **測試版範圍縮減**：從六回縮減為三回 + 結局
 - **目標章節**：萬福庵 → 大天后宮 → 普濟殿 → 簡單結局
@@ -134,6 +139,22 @@ thunder-god-adventure/
 - 許丙丁《小封神》原著
 - 台南市文化資產資料
 - 府城歷史古蹟導覽
+
+## 🎨 AI 圖片生成 Prompt
+
+### 萬福庵場景圖片 (`wanfuan.jpg`)
+```
+A traditional Taiwanese temple called "Wanfuan Temple" (萬福庵) in Tainan, Taiwan. Ancient Chinese architecture with red pillars, curved roof tiles, ornate decorations, and traditional lanterns. Warm golden lighting, atmospheric and mystical mood. The temple should look historic and sacred, with intricate wood carvings and traditional Chinese architectural details. Shot in cinematic style with rich colors and dramatic lighting. 500x300 pixels, landscape orientation.
+
+Style: Traditional Chinese temple architecture, warm golden tones, atmospheric lighting, historic and sacred feeling.
+```
+
+### 三寶殿匾額圖片 (`puzzle1.png`)
+```
+A traditional Chinese temple plaque (匾額) with the characters "三寶殿" (San Bao Dian) written in elegant Chinese calligraphy. The plaque should be wooden with gold or red characters, hanging in a traditional temple interior. Include traditional decorative elements around the plaque like carved dragons, clouds, or floral patterns. The background should show part of a temple interior with red pillars and traditional decorations. Clear, readable Chinese characters are essential for the puzzle. 400x250 pixels, landscape orientation.
+
+Style: Traditional Chinese calligraphy, temple interior, gold/red color scheme, ornate decorative elements, clear and readable text.
+```
 
 ## 📄 授權
 
