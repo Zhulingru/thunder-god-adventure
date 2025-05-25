@@ -18,7 +18,7 @@ function renderChapter() {
   document.getElementById('story').innerHTML = chapter.story.map(p => `<p>${p}</p>`).join('');
   // 章節圖片
   if (chapter.image) {
-    document.getElementById('chapter-image').innerHTML = `<div class="chapter-image">萬福庵場景圖片</div>`;
+    document.getElementById('chapter-image').innerHTML = `<img src="images/${chapter.image}" alt="章節場景" class="chapter-image">`;
   } else {
     document.getElementById('chapter-image').innerHTML = '';
   }
@@ -28,7 +28,7 @@ function renderChapter() {
     document.getElementById('puzzle-section').style.display = '';
     document.getElementById('puzzle-question').textContent = chapter.puzzle.question;
     if (chapter.puzzle.image) {
-      document.getElementById('puzzle-image').innerHTML = `<div class="puzzle-image">三寶殿匾額圖片</div>`;
+      document.getElementById('puzzle-image').innerHTML = `<img src="images/${chapter.puzzle.image}" alt="謎題圖片" class="puzzle-image">`;
       document.getElementById('puzzle-image').style.display = '';
     } else {
       document.getElementById('puzzle-image').style.display = 'none';

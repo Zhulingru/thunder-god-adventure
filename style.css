@@ -91,16 +91,11 @@ body {
   max-width: 100%;
   width: 500px;
   height: 300px;
+  object-fit: cover;
   border-radius: 8px;
   border: 2px solid var(--border-gold);
   box-shadow: 0 4px 16px var(--shadow-dark);
-  background: linear-gradient(45deg, #333, #555);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-dim);
-  font-size: 1rem;
-  text-align: center;
+  display: block;
   margin: 0 auto;
 }
 
@@ -109,17 +104,12 @@ body {
   max-width: 100%;
   width: 400px;
   height: 250px;
+  object-fit: cover;
   border-radius: 8px;
   border: 2px solid var(--border-gold);
   box-shadow: 0 4px 16px var(--shadow-dark);
   margin: 1rem auto;
-  background: linear-gradient(45deg, #333, #555);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-dim);
-  font-size: 0.9rem;
-  text-align: center;
+  display: block;
 }
 
 /* 按鈕樣式 */
