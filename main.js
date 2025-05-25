@@ -89,6 +89,11 @@ function nextChapter() {
   currentChapter++;
   if (currentChapter < gameData.chapters.length) {
     renderChapter();
+    // 滾動到頁面頂部，讓玩家看到新章節
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   } else {
     showEnding();
   }
