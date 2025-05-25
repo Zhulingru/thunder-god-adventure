@@ -1,6 +1,7 @@
 let gameData;
 let currentChapter = 0;
 let currentHint = 0;
+let isTyping = false;
 
 // 讀取 JSON 資料
 fetch('data/gameData.json')
@@ -14,8 +15,17 @@ function renderChapter() {
   const chapter = gameData.chapters[currentChapter];
   document.getElementById('game-title').textContent = gameData.title;
   document.getElementById('chapter-title').textContent = chapter.title;
+  
+  // 更新進度條
+  updateProgress();
+  
+  // 清空故事區域，準備打字機效果
+  document.getElementById('story').innerHTML = '';
   document.getElementById('chapter-intro').textContent = chapter.intro || '';
-  document.getElementById('story').innerHTML = chapter.story.map(p => `<p>${p}</p>`).join('');
+  
+  // 使用打字機效果顯示故事
+  typewriterEffect(chapter.story, 'story');
+  
   // 章節圖片
   if (chapter.image) {
     document.getElementById('chapter-image').innerHTML = `<img src="images/${chapter.image}" alt="章節場景" class="chapter-image">`;
@@ -118,4 +128,84 @@ function showEnding() {
   document.getElementById('ending-section').style.display = '';
   document.getElementById('ending-title').textContent = gameData.ending.title;
   document.getElementById('ending-story').innerHTML = gameData.ending.story.map(p => `<p>${p}</p>`).join('');
+}
+
+// 打字機效果
+function typewriterEffect(textArray, elementId, speed = 30) {
+  if (isTyping) return;
+  isTyping = true;
+  
+  // 顯示提示
+  const hint = document.getElementById('typing-hint');
+  if (hint) {
+    hint.style.display = 'block';
+  }
+  
+  const element = document.getElementById(elementId);
+  let paragraphIndex = 0;
+  
+  function typeNextParagraph() {
+    if (paragraphIndex >= textArray.length) {
+      isTyping = false;
+      // 隱藏提示
+      if (hint) {
+        hint.style.display = 'none';
+      }
+      return;
+    }
+    
+    const paragraph = document.createElement('p');
+    element.appendChild(paragraph);
+    
+    const text = textArray[paragraphIndex];
+    let charIndex = 0;
+    
+    function typeChar() {
+      if (charIndex < text.length) {
+        paragraph.textContent += text[charIndex];
+        charIndex++;
+        setTimeout(typeChar, speed);
+      } else {
+        paragraphIndex++;
+        setTimeout(typeNextParagraph, 200); // 段落間停頓
+      }
+    }
+    
+    typeChar();
+  }
+  
+  typeNextParagraph();
+}
+
+// 更新進度條
+function updateProgress() {
+  const totalChapters = 3; // 測試版三回
+  const currentProgress = ((currentChapter + 1) / totalChapters) * 100;
+  
+  document.getElementById('progress-fill').style.width = currentProgress + '%';
+  
+  const progressTexts = [
+    '第一回 / 共三回',
+    '第二回 / 共三回', 
+    '第三回 / 共三回'
+  ];
+  
+  if (currentChapter < progressTexts.length) {
+    document.getElementById('progress-text').textContent = progressTexts[currentChapter];
+  }
+}
+
+// 跳過打字機效果（點擊加速）
+function skipTypewriter() {
+  if (isTyping) {
+    isTyping = false;
+    const chapter = gameData.chapters[currentChapter];
+    document.getElementById('story').innerHTML = chapter.story.map(p => `<p>${p}</p>`).join('');
+    
+    // 隱藏提示
+    const hint = document.getElementById('typing-hint');
+    if (hint) {
+      hint.style.display = 'none';
+    }
+  }
 }
