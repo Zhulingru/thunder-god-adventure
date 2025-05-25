@@ -98,7 +98,7 @@ document.getElementById('submit-answer').onclick = function() {
   const userAnswer = document.getElementById('puzzle-answer').value.trim();
   const correctAnswers = chapter.puzzle.answer.map(ans => ans.trim());
   if (correctAnswers.includes(userAnswer)) {
-    document.getElementById('puzzle-feedback').textContent = '答對了！';
+    document.getElementById('puzzle-feedback').textContent = gameData.settings.correctMessage;
     
     // 顯示章節結尾
     if (chapter.conclusion) {
@@ -111,7 +111,7 @@ document.getElementById('submit-answer').onclick = function() {
       }, 1000);
     }
   } else {
-    document.getElementById('puzzle-feedback').textContent = '哎呀！再觀察一下。';
+    document.getElementById('puzzle-feedback').textContent = gameData.settings.wrongMessage;
   }
 };
 
@@ -122,7 +122,7 @@ document.getElementById('show-hint').onclick = function() {
     document.getElementById('hint').textContent = chapter.puzzle.hints[currentHint];
     currentHint++;
   } else {
-    document.getElementById('hint').textContent = '沒有更多提示了！';
+    document.getElementById('hint').textContent = gameData.settings.noMoreHints;
   }
 };
 
@@ -162,7 +162,7 @@ function showChapterConclusion(conclusion) {
   // 添加繼續按鈕
   setTimeout(() => {
     const continueBtn = document.createElement('button');
-    continueBtn.textContent = '繼續冒險';
+    continueBtn.textContent = gameData.settings.continueButton;
     continueBtn.className = 'btn';
     continueBtn.style.marginTop = '1.5rem';
     continueBtn.onclick = () => nextChapter();
@@ -193,19 +193,16 @@ function showEnding() {
 
 // 更新進度條
 function updateProgress() {
-  const totalChapters = 3; // 測試版三回
+  const totalChapters = gameData.chapters.length; // 動態取得章節數量
   const currentProgress = ((currentChapter + 1) / totalChapters) * 100;
   
   document.getElementById('progress-fill').style.width = currentProgress + '%';
   
-  const progressTexts = [
-    '第一回 / 共三回',
-    '第二回 / 共三回', 
-    '第三回 / 共三回'
-  ];
+  // 動態生成進度文字
+  const chapterNumbers = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十'];
+  const currentChapterText = chapterNumbers[currentChapter] || (currentChapter + 1);
+  const totalChapterText = chapterNumbers[totalChapters - 1] || totalChapters;
   
-  if (currentChapter < progressTexts.length) {
-    document.getElementById('progress-text').textContent = progressTexts[currentChapter];
-  }
+  document.getElementById('progress-text').textContent = `第${currentChapterText}回 / 共${totalChapterText}回`;
 }
 

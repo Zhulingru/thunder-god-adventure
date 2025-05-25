@@ -1,5 +1,13 @@
 {
     "title": "雷震子遇難記",
+    "subtitle": "台南古蹟解謎冒險",
+    "theme": "古典廟宇風格",
+    "settings": {
+      "correctMessage": "答對了！",
+      "wrongMessage": "哎呀！再觀察一下。",
+      "noMoreHints": "沒有更多提示了！",
+      "continueButton": "繼續冒險"
+    },
     "chapters": [
       {
         "id": "wanfuan",
