@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>雷震子遇難記｜網頁遊戲</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-container">
+    <h1 id="game-title"></h1>
+    <div id="chapter-title"></div>
+    <div id="chapter-intro"></div>
+    <div id="story"></div>
+    <div id="chapter-image"></div>
+    <div id="puzzle-section" style="display:none;">
+      <h2>謎題</h2>
+      <div id="puzzle-question"></div>
+      <img id="puzzle-image" style="max-width:300px;display:none;" />
+      <input type="text" id="puzzle-answer" placeholder="請輸入答案">
+      <button id="submit-answer">確定</button>
+      <button id="show-hint">提示</button>
+      <div id="hint"></div>
+      <div id="puzzle-feedback"></div>
+    </div>
+    <div id="ending-section" style="display:none;">
+      <h2 id="ending-title"></h2>
+      <div id="ending-story"></div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
