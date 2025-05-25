@@ -16,14 +16,19 @@ function renderChapter() {
   document.getElementById('chapter-title').textContent = chapter.title;
   document.getElementById('chapter-intro').textContent = chapter.intro || '';
   document.getElementById('story').innerHTML = chapter.story.map(p => `<p>${p}</p>`).join('');
-  document.getElementById('chapter-image').innerHTML = chapter.image ? `<img src="${chapter.image}" alt="章節插圖" style="max-width:300px;">` : '';
+  // 章節圖片
+  if (chapter.image) {
+    document.getElementById('chapter-image').innerHTML = `<div class="chapter-image">萬福庵場景圖片</div>`;
+  } else {
+    document.getElementById('chapter-image').innerHTML = '';
+  }
 
   // 謎題區
   if (chapter.puzzle) {
     document.getElementById('puzzle-section').style.display = '';
     document.getElementById('puzzle-question').textContent = chapter.puzzle.question;
     if (chapter.puzzle.image) {
-      document.getElementById('puzzle-image').src = chapter.puzzle.image;
+      document.getElementById('puzzle-image').innerHTML = `<div class="puzzle-image">三寶殿匾額圖片</div>`;
       document.getElementById('puzzle-image').style.display = '';
     } else {
       document.getElementById('puzzle-image').style.display = 'none';

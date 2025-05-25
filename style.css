@@ -80,6 +80,47 @@ body {
   color: var(--text-light);
 }
 
+/* 圖片容器 */
+.image-container {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+/* 章節圖片 */
+.chapter-image {
+  max-width: 100%;
+  width: 500px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid var(--border-gold);
+  box-shadow: 0 4px 16px var(--shadow-dark);
+  background: linear-gradient(45deg, #333, #555);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  font-size: 1rem;
+}
+
+/* 謎題圖片 */
+.puzzle-image {
+  max-width: 100%;
+  width: 400px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid var(--border-gold);
+  box-shadow: 0 4px 16px var(--shadow-dark);
+  margin: 1rem 0;
+  background: linear-gradient(45deg, #333, #555);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
 /* 按鈕樣式 */
 .btn {
   background: linear-gradient(45deg, var(--border-gold), var(--text-gold));
@@ -92,6 +133,7 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   text-shadow: none;
+  margin: 5px;
 }
 
 .btn:hover {
@@ -134,5 +176,15 @@ body {
   
   .story-text {
     font-size: 1rem;
+  }
+  
+  .chapter-image {
+    width: 100%;
+    height: 200px;
+  }
+  
+  .puzzle-image {
+    width: 100%;
+    height: 180px;
   }
 }
