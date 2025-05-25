@@ -7,25 +7,30 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="game-container">
-    <h1 id="game-title"></h1>
-    <div id="chapter-title"></div>
-    <div id="chapter-intro"></div>
-    <div id="story"></div>
-    <div id="chapter-image"></div>
-    <div id="puzzle-section" style="display:none;">
-      <h2>謎題</h2>
-      <div id="puzzle-question"></div>
-      <img id="puzzle-image" style="max-width:300px;display:none;" />
-      <input type="text" id="puzzle-answer" placeholder="請輸入答案">
-      <button id="submit-answer">確定</button>
-      <button id="show-hint">提示</button>
-      <div id="hint"></div>
-      <div id="puzzle-feedback"></div>
+  <div id="game-container" class="game-container">
+    <h1 id="game-title" class="game-title"></h1>
+    <div id="chapter-title" class="chapter-title"></div>
+    
+    <div class="content-card">
+      <div id="chapter-intro" class="story-text"></div>
+      <div id="story" class="story-text"></div>
+      <div id="chapter-image"></div>
     </div>
-    <div id="ending-section" style="display:none;">
-      <h2 id="ending-title"></h2>
-      <div id="ending-story"></div>
+    
+    <div id="puzzle-section" class="content-card" style="display:none;">
+      <h2 class="chapter-title">謎題</h2>
+      <div id="puzzle-question" class="story-text"></div>
+      <img id="puzzle-image" style="max-width:300px;display:none;" />
+      <input type="text" id="puzzle-answer" class="puzzle-input" placeholder="請輸入答案">
+      <button id="submit-answer" class="btn">確定</button>
+      <button id="show-hint" class="btn">提示</button>
+      <div id="hint" class="story-text"></div>
+      <div id="puzzle-feedback" class="story-text"></div>
+    </div>
+    
+    <div id="ending-section" class="content-card" style="display:none;">
+      <h2 id="ending-title" class="chapter-title"></h2>
+      <div id="ending-story" class="story-text"></div>
     </div>
   </div>
   <script src="main.js"></script>
