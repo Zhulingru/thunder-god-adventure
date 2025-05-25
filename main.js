@@ -51,10 +51,18 @@ document.getElementById('submit-answer').onclick = function() {
   const userAnswer = document.getElementById('puzzle-answer').value.trim();
   const correctAnswers = chapter.puzzle.answer.map(ans => ans.trim());
   if (correctAnswers.includes(userAnswer)) {
-    document.getElementById('puzzle-feedback').textContent = '答對了！進入下一關...';
-    setTimeout(() => {
-      nextChapter();
-    }, 1000);
+    document.getElementById('puzzle-feedback').textContent = '答對了！';
+    
+    // 顯示章節結尾
+    if (chapter.conclusion) {
+      setTimeout(() => {
+        showChapterConclusion(chapter.conclusion);
+      }, 1000);
+    } else {
+      setTimeout(() => {
+        nextChapter();
+      }, 1000);
+    }
   } else {
     document.getElementById('puzzle-feedback').textContent = '答錯了，請再試一次！';
   }
@@ -78,6 +86,26 @@ function nextChapter() {
   } else {
     showEnding();
   }
+}
+
+function showChapterConclusion(conclusion) {
+  // 隱藏謎題區域
+  document.getElementById('puzzle-section').style.display = 'none';
+  
+  // 顯示章節結尾
+  const conclusionHtml = conclusion.map(p => `<p>${p}</p>`).join('');
+  document.getElementById('story').innerHTML += `<div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 2px solid var(--border-gold);">${conclusionHtml}</div>`;
+  
+  // 添加繼續按鈕
+  setTimeout(() => {
+    const continueBtn = document.createElement('button');
+    continueBtn.textContent = '繼續冒險';
+    continueBtn.className = 'btn';
+    continueBtn.style.marginTop = '1.5rem';
+    continueBtn.onclick = () => nextChapter();
+    
+    document.getElementById('story').appendChild(continueBtn);
+  }, 2000);
 }
 
 function showEnding() {
