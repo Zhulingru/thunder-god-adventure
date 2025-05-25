@@ -94,7 +94,7 @@ function showChapterConclusion(conclusion) {
   
   // 顯示章節結尾
   const conclusionHtml = conclusion.map(p => `<p>${p}</p>`).join('');
-  document.getElementById('story').innerHTML += `<div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 2px solid var(--border-gold);">${conclusionHtml}</div>`;
+  document.getElementById('story').innerHTML += `<div class="chapter-conclusion">${conclusionHtml}</div>`;
   
   // 添加繼續按鈕
   setTimeout(() => {
