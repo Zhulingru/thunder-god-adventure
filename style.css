@@ -177,6 +177,22 @@ body {
   margin: 0 auto;
 }
 
+/* 章節開場示意圖特殊樣式 */
+#chapter-intro-section .chapter-image {
+  width: 600px;
+  height: 400px;
+  margin-bottom: 1.5rem;
+}
+
+/* 開場文字樣式 */
+#chapter-intro-text {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--text-gold);
+  font-weight: bold;
+}
+
 /* 謎題圖片 */
 .puzzle-image {
   max-width: 100%;
@@ -286,6 +302,11 @@ body {
     font-size: 0.9rem;
   }
   
+  #chapter-intro-section .chapter-image {
+    width: 100%;
+    height: 250px;
+  }
+  
   .puzzle-image {
     width: 100%;
     height: 160px;
@@ -338,6 +359,10 @@ body {
   
   .chapter-image {
     height: 180px;
+  }
+  
+  #chapter-intro-section .chapter-image {
+    height: 220px;
   }
   
   .puzzle-image {

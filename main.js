@@ -10,6 +10,11 @@ fetch('data/gameData.json')
     renderChapter();
   });
 
+// 開始章節按鈕事件
+document.getElementById('start-chapter').onclick = function() {
+  startChapter();
+};
+
 function renderChapter() {
   const chapter = gameData.chapters[currentChapter];
   document.getElementById('game-title').textContent = gameData.title;
@@ -18,8 +23,44 @@ function renderChapter() {
   // 更新進度條
   updateProgress();
   
+  // 顯示章節開場示意圖
+  showChapterIntro(chapter);
+}
+
+function showChapterIntro(chapter) {
+  // 隱藏其他區域
+  document.getElementById('main-content').style.display = 'none';
+  document.getElementById('puzzle-section').style.display = 'none';
+  document.getElementById('ending-section').style.display = 'none';
+  
+  // 顯示開場示意圖區域
+  document.getElementById('chapter-intro-section').style.display = '';
+  
+  // 設置開場示意圖
+  if (chapter.introImage) {
+    document.getElementById('chapter-intro-image').innerHTML = `<img src="images/${chapter.introImage}" alt="章節開場示意圖" class="chapter-image">`;
+  }
+  
+  // 設置開場文字
+  document.getElementById('chapter-intro-text').innerHTML = `<p>${chapter.intro}</p>`;
+  
+  // 滾動到頂部
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+function startChapter() {
+  const chapter = gameData.chapters[currentChapter];
+  
+  // 隱藏開場示意圖區域
+  document.getElementById('chapter-intro-section').style.display = 'none';
+  
+  // 顯示主要內容
+  document.getElementById('main-content').style.display = '';
+  
   // 顯示故事內容
-  document.getElementById('chapter-intro').textContent = chapter.intro || '';
   document.getElementById('story').innerHTML = chapter.story.map(p => `<p>${p}</p>`).join('');
   
   // 章節圖片
