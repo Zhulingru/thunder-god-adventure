@@ -43,8 +43,14 @@ thunder-god-adventure/
 ├── style.css           # 樣式表（古典廟宇風格，響應式設計）
 ├── main.js             # 遊戲邏輯（章節渲染、謎題驗證、提示系統）
 ├── data/
-│   └── gameData.json   # 遊戲資料（故事、謎題、對話分段格式）
-├── images/             # 圖片資源（章節場景、謎題圖片）
+│   └── gameData.json   # 遊戲資料（三回完整故事、謎題、對話分段格式）
+├── images/             # 圖片資源
+│   ├── wanfuan.png     # 第一回萬福庵場景圖
+│   ├── puzzle1.png     # 第一回三寶殿匾額謎題圖
+│   ├── datianhou.png   # 第二回大天后宮場景圖
+│   ├── puzzle2.png     # 第二回媽祖謎題圖
+│   ├── pujidian.png    # 第三回普濟殿場景圖
+│   └── puzzle3.png     # 第三回池府王爺謎題圖
 └── README.md           # 專案說明與開發歷程
 ```
 
@@ -75,7 +81,7 @@ thunder-god-adventure/
 
 ## 📝 開發歷程
 
-### 2024-12-19
+### 2025-05-25
 
 #### 初始化階段
 - **建立基本架構**：HTML + CSS + JavaScript 基礎結構
@@ -122,7 +128,7 @@ thunder-god-adventure/
 - **開發重點**：完整的三回劇情體驗，建立可複製的章節模式
 - **手機優先設計**：主打手機實境解謎，玩家邊玩邊走訪古蹟
 
-### 2025-01-25
+### 2025-05-25
 
 #### 文字排版優化
 - **段落間距改善**：增加段落間距，解決文字密集問題
@@ -139,19 +145,26 @@ thunder-god-adventure/
 - **敘述對話分離**：純敘述保持完整，只分離角色對話部分
 - **閱讀流暢性**：避免長段落中混雜多個角色的話，減少閱讀困惑
 
+#### 互動功能完善
+- **進度條系統**：金色漸層進度條顯示遊戲進度（第X回/共三回）
+- **章節切換優化**：完成謎題後自動滾動到頂部，確保玩家看到新章節
+- **錯誤訊息改善**：答錯時顯示「哎呀！再觀察一下。」更友善的提示
+- **完整劇情體驗**：三回完整故事線，從誤會到真相大白
+
 ## 🎯 開發計畫
 
 ### 測試版目標（三回 + 結局）
 - [x] 第一回：萬福庵（內容完整，包含豐富故事、圖片、謎題和結尾）
-- [ ] 第二回：大天后宮（千里眼順風耳的考驗）
-- [ ] 第三回：普濟殿（蜘蛛精的陷阱）
-- [ ] 簡單結局：故事收尾
+- [x] 第二回：大天后宮（千里眼順風耳的考驗，揭露真兇線索）
+- [x] 第三回：普濟殿（蜘蛛精的最終對決，救回贔屭）
+- [x] 完整結局：真相大白，雷震子洗刷冤屈
 
 ### 技術完善
 - [x] 介面框架（古典廟宇風格）
-- [x] 完善第一回內容和謎題
+- [x] 完善所有章節內容和謎題
 - [x] 建立章節切換機制
-- [x] 優化使用者體驗（文字排版改善）
+- [x] 優化使用者體驗（文字排版改善、進度條、自動滾動）
+- [x] 完整三回劇情和結局
 
 ### 未來擴展（正式版）
 - [ ] 擴展至完整六回
@@ -189,6 +202,34 @@ A traditional Chinese temple plaque (匾額) with the characters "三寶殿" (Sa
 Style: Traditional Chinese calligraphy, temple interior, gold/red color scheme, ornate decorative elements, clear and readable text.
 ```
 
+### 大天后宮場景圖片 (`datianhou.png`)
+```
+A majestic traditional Taiwanese temple called "Datianhou Temple" (大天后宮) in Tainan, Taiwan. Grand Chinese architecture with red pillars, golden decorations, curved roof tiles with dragon sculptures. The temple should be more magnificent than Wanfuan Temple, showing its status as Taiwan's first Mazu temple. Include traditional lanterns, incense burners, and ornate carvings. Evening or dusk lighting with warm golden glow. Atmospheric and sacred mood. 500x300 pixels, landscape orientation.
+
+Style: Grand traditional Chinese temple architecture, red and gold color scheme, majestic and sacred atmosphere, warm lighting.
+```
+
+### 媽祖謎題圖片 (`puzzle2.png`)
+```
+A traditional Chinese temple interior showing Mazu (媽祖) statue or shrine in Datianhou Temple. The goddess Mazu should be depicted in traditional Chinese style with ornate robes, crown, and peaceful expression. Include traditional temple decorations, red pillars, golden ornaments, and incense. The image should convey the sacred nature of Taiwan's most important sea goddess. Clear details for puzzle context. 400x250 pixels, landscape orientation.
+
+Style: Traditional Chinese religious art, temple interior, red and gold decorations, sacred and peaceful atmosphere.
+```
+
+### 普濟殿場景圖片 (`pujidian.png`)
+```
+A mysterious traditional Taiwanese temple called "Pujidian Temple" (普濟殿) in Tainan at night. Ancient Chinese architecture with darker, more mysterious atmosphere compared to other temples. Moonlight casting shadows, traditional lanterns providing dim lighting. The temple should look historic and slightly eerie, suitable for the final confrontation scene. Include stone lions, traditional roof tiles, and atmospheric fog or mist. 500x300 pixels, landscape orientation.
+
+Style: Traditional Chinese temple architecture, nighttime scene, mysterious and atmospheric, moonlight and lantern lighting, slightly eerie mood.
+```
+
+### 池府王爺謎題圖片 (`puzzle3.png`)
+```
+A traditional Chinese temple shrine showing Chi Fu Wang Ye (池府王爺) deity statue or plaque in Pujidian Temple. The deity should be depicted in traditional Chinese style with royal robes and dignified expression, as he is known as the plague god and protector. Include traditional temple decorations, dark wood carvings, and atmospheric lighting. The character "池" should be visible or prominent for the puzzle. 400x250 pixels, landscape orientation.
+
+Style: Traditional Chinese religious art, temple interior, dignified and powerful deity, dark wood and traditional decorations.
+```
+
 ## 📄 授權
 
 本專案採用 MIT 授權條款。
@@ -196,4 +237,4 @@ Style: Traditional Chinese calligraphy, temple interior, gold/red color scheme, 
 ---
 
 **開發者**：Zhulingru  
-**最後更新**：2025-01-25
+**最後更新**：2025-05-25
