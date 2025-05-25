@@ -70,7 +70,7 @@ document.getElementById('submit-answer').onclick = function() {
       }, 1000);
     }
   } else {
-    document.getElementById('puzzle-feedback').textContent = '答錯了，請再試一次！';
+    document.getElementById('puzzle-feedback').textContent = '哎呀！再觀察一下。';
   }
 };
 
