@@ -146,7 +146,18 @@ function showChapterConclusion(conclusion) {
   
   // 顯示章節結尾
   const conclusionHtml = conclusion.map(p => `<p>${p}</p>`).join('');
-  document.getElementById('story').innerHTML += `<div class="chapter-conclusion">${conclusionHtml}</div>`;
+  const conclusionDiv = document.createElement('div');
+  conclusionDiv.className = 'chapter-conclusion';
+  conclusionDiv.innerHTML = conclusionHtml;
+  document.getElementById('story').appendChild(conclusionDiv);
+  
+  // 滾動到章節結尾位置
+  setTimeout(() => {
+    conclusionDiv.scrollIntoView({ 
+      behavior: 'smooth', 
+      block: 'start' 
+    });
+  }, 500);
   
   // 添加繼續按鈕
   setTimeout(() => {
@@ -157,19 +168,33 @@ function showChapterConclusion(conclusion) {
     continueBtn.onclick = () => nextChapter();
     
     document.getElementById('story').appendChild(continueBtn);
+    
+    // 確保按鈕也在視野內
+    setTimeout(() => {
+      continueBtn.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'center' 
+      });
+    }, 100);
   }, 2000);
 }
 
 function showEnding() {
-  document.getElementById('game-title').textContent = gameData.title;
-  document.getElementById('chapter-title').textContent = '';
-  document.getElementById('chapter-intro').textContent = '';
-  document.getElementById('story').innerHTML = '';
-  document.getElementById('chapter-image').innerHTML = '';
+  // 隱藏所有其他區域
+  document.getElementById('chapter-intro-section').style.display = 'none';
+  document.getElementById('main-content').style.display = 'none';
   document.getElementById('puzzle-section').style.display = 'none';
+  
+  // 顯示結局區域
   document.getElementById('ending-section').style.display = '';
   document.getElementById('ending-title').textContent = gameData.ending.title;
   document.getElementById('ending-story').innerHTML = gameData.ending.story.map(p => `<p>${p}</p>`).join('');
+  
+  // 滾動到頂部顯示結局
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
 }
 
 
