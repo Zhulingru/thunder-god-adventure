@@ -168,14 +168,6 @@ function showChapterConclusion(conclusion) {
     continueBtn.onclick = () => nextChapter();
     
     document.getElementById('story').appendChild(continueBtn);
-    
-    // 確保按鈕也在視野內
-    setTimeout(() => {
-      continueBtn.scrollIntoView({ 
-        behavior: 'smooth', 
-        block: 'center' 
-      });
-    }, 100);
   }, 2000);
 }
 
