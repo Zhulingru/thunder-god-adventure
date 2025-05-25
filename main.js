@@ -1,7 +1,6 @@
 let gameData;
 let currentChapter = 0;
 let currentHint = 0;
-let isTyping = false;
 
 // 讀取 JSON 資料
 fetch('data/gameData.json')
@@ -19,12 +18,9 @@ function renderChapter() {
   // 更新進度條
   updateProgress();
   
-  // 清空故事區域，準備打字機效果
-  document.getElementById('story').innerHTML = '';
+  // 顯示故事內容
   document.getElementById('chapter-intro').textContent = chapter.intro || '';
-  
-  // 使用打字機效果顯示故事
-  typewriterEffect(chapter.story, 'story');
+  document.getElementById('story').innerHTML = chapter.story.map(p => `<p>${p}</p>`).join('');
   
   // 章節圖片
   if (chapter.image) {
@@ -130,52 +126,7 @@ function showEnding() {
   document.getElementById('ending-story').innerHTML = gameData.ending.story.map(p => `<p>${p}</p>`).join('');
 }
 
-// 打字機效果
-function typewriterEffect(textArray, elementId, speed = 30) {
-  if (isTyping) return;
-  isTyping = true;
-  
-  // 顯示提示
-  const hint = document.getElementById('typing-hint');
-  if (hint) {
-    hint.style.display = 'block';
-  }
-  
-  const element = document.getElementById(elementId);
-  let paragraphIndex = 0;
-  
-  function typeNextParagraph() {
-    if (paragraphIndex >= textArray.length) {
-      isTyping = false;
-      // 隱藏提示
-      if (hint) {
-        hint.style.display = 'none';
-      }
-      return;
-    }
-    
-    const paragraph = document.createElement('p');
-    element.appendChild(paragraph);
-    
-    const text = textArray[paragraphIndex];
-    let charIndex = 0;
-    
-    function typeChar() {
-      if (charIndex < text.length) {
-        paragraph.textContent += text[charIndex];
-        charIndex++;
-        setTimeout(typeChar, speed);
-      } else {
-        paragraphIndex++;
-        setTimeout(typeNextParagraph, 200); // 段落間停頓
-      }
-    }
-    
-    typeChar();
-  }
-  
-  typeNextParagraph();
-}
+
 
 // 更新進度條
 function updateProgress() {
@@ -195,17 +146,3 @@ function updateProgress() {
   }
 }
 
-// 跳過打字機效果（點擊加速）
-function skipTypewriter() {
-  if (isTyping) {
-    isTyping = false;
-    const chapter = gameData.chapters[currentChapter];
-    document.getElementById('story').innerHTML = chapter.story.map(p => `<p>${p}</p>`).join('');
-    
-    // 隱藏提示
-    const hint = document.getElementById('typing-hint');
-    if (hint) {
-      hint.style.display = 'none';
-    }
-  }
-}
